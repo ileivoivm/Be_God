@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>故事內容 - 《修仙-七玄關》</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased">
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-[#A36B4F]">《修仙-七玄關》</h1>
+            <p class="text-lg text-gray-600 mt-2">故事內容</p>
+        </header>
+
+        <!-- 页面导航 -->
+        <nav class="page-nav">
+            <a href="index.html">🏠 首页</a>
+            <a href="overview.html">👥 人物總覽</a>
+            <a href="relations.html">🕸️ 關係網絡</a>
+            <a href="structure.html">📊 關係圖</a>
+            <a href="chapters.html">📖 章節大綱</a>
+            <a href="antagonists.html">⚔️ 反派剖析</a>
+            <a href="story.html" class="active">📚 故事內容</a>
+        </nav>
+
+        <main>
+            <!-- 故事元信息 -->
+            <div class="bg-white rounded-lg p-6 shadow-md mb-8">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-bold text-[#38342E] mb-2" id="chapter-title">第一章：嘉義夜雨</h2>
+                    <p class="text-gray-600" id="chapter-summary">林承祐在深夜接到神秘命案報告，前往嘉義鄉間調查一起涉及符籙和宗教的案件，揭開了十五年前「白衣觀音案」的陰影。</p>
+                </div>
+                
+                <!-- 故事统计 -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-[#A36B4F]" id="total-segments">8</div>
+                        <div class="text-sm text-gray-600">段落數</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-[#A36B4F]" id="total-words">4,643</div>
+                        <div class="text-sm text-gray-600">總字數</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-[#A36B4F]">懸疑推理</div>
+                        <div class="text-sm text-gray-600">類型</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-[#A36B4F]">第三人稱</div>
+                        <div class="text-sm text-gray-600">視角</div>
+                    </div>
+                </div>
+
+                <!-- 主题标签 -->
+                <div class="flex flex-wrap gap-2 justify-center">
+                    <span class="px-3 py-1 bg-[#F3ECE4] text-[#A36B4F] rounded-full text-sm">宗教與科學的對立</span>
+                    <span class="px-3 py-1 bg-[#F3ECE4] text-[#A36B4F] rounded-full text-sm">過去創傷的復現</span>
+                    <span class="px-3 py-1 bg-[#F3ECE4] text-[#A36B4F] rounded-full text-sm">體制與真相的衝突</span>
+                    <span class="px-3 py-1 bg-[#F3ECE4] text-[#A36B4F] rounded-full text-sm">超自然與理性的碰撞</span>
+                </div>
+            </div>
+
+            <!-- 段落导航 -->
+            <div class="bg-white rounded-lg p-6 shadow-md mb-8">
+                <h3 class="text-xl font-bold text-[#38342E] mb-4">段落導航</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="segment-nav">
+                    <!-- 段落导航按钮将通过JavaScript生成 -->
+                </div>
+            </div>
+
+            <!-- 故事内容 -->
+            <div class="space-y-8 reading-container" id="story-content">
+                <!-- 故事段落将通过JavaScript生成 -->
+            </div>
+
+            <!-- 分析面板 -->
+            <div class="mt-12 bg-[#F3ECE4] rounded-lg p-6">
+                <h3 class="text-xl font-bold text-[#38342E] mb-4">故事分析</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold text-[#A36B4F] mb-2">文學技巧</h4>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• 感官描寫</li>
+                            <li>• 象徵手法</li>
+                            <li>• 對比手法</li>
+                            <li>• 伏筆設置</li>
+                            <li>• 氛圍營造</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-[#A36B4F] mb-2">關鍵象徵</h4>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• 符籙 - 超自然力量的載體</li>
+                            <li>• 圓形符號 - 未知的演算法或儀式</li>
+                            <li>• 香氣 - 轉化與控制</li>
+                            <li>• 雨 - 洗滌與重生</li>
+                            <li>• 木牌 - 隱藏的真相</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // 等待JSON数据加载
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('story-structured.json')
+                .then(res => res.json())
+                .then(data => {
+                    renderStory(data);
+                })
+                .catch(err => {
+                    console.error('無法載入 story-structured.json', err);
+                    // 回退：提供最小結構以避免頁面空白
+                    renderStory({
+                        chapter_1: {
+                            title: '資料載入失敗',
+                            summary: '請確認以本機伺服器開啟或檔案路徑正確。',
+                            segments: {},
+                            chapter_summary: { total_segments: 0, total_word_count: 0 }
+                        }
+                    });
+                });
+        });
+
+        function renderStory(data) {
+            const chapter = data.chapter_1;
+            const segments = chapter.segments;
+            
+            // 更新章节信息
+            document.getElementById('chapter-title').textContent = chapter.title;
+            document.getElementById('chapter-summary').textContent = chapter.summary;
+            document.getElementById('total-segments').textContent = chapter.chapter_summary.total_segments;
+            document.getElementById('total-words').textContent = chapter.chapter_summary.total_word_count.toLocaleString();
+
+            // 生成段落導航
+            const segmentNav = document.getElementById('segment-nav');
+            segmentNav.innerHTML = '';
+            
+            Object.values(segments).forEach(segment => {
+                const navButton = document.createElement('button');
+                navButton.className = 'bg-white border border-gray-200 rounded-lg p-3 text-left hover:bg-gray-50 transition-colors';
+                navButton.innerHTML = `
+                    <div class="font-semibold text-sm text-[#38342E]">${segment.title}</div>
+                    <div class="text-xs text-gray-500 mt-1">${segment.word_count} 字</div>
+                `;
+                navButton.onclick = () => scrollToSegment(segment.sequence);
+                segmentNav.appendChild(navButton);
+            });
+
+            // 生成故事内容
+            const storyContent = document.getElementById('story-content');
+            storyContent.innerHTML = '';
+            
+            Object.values(segments).forEach(segment => {
+                const segmentDiv = document.createElement('div');
+                segmentDiv.id = `segment-${segment.sequence}`;
+                segmentDiv.className = 'bg-white rounded-lg p-6 shadow-md';
+                // 將 content 依空行切成段落
+                const paragraphs = (segment.content || '')
+                    .split(/\n\s*\n/) // 以空行分段
+                    .map(s => s.trim())
+                    .filter(Boolean);
+
+                const paragraphsHtml = paragraphs.length
+                    ? paragraphs.map(p => `<p class=\"indent-2em mb-4 leading-8 text-gray-800\">${p}</p>`).join('')
+                    : `<p class=\"indent-2em mb-4 leading-8 text-gray-800\">${segment.content || ''}</p>`;
+
+                segmentDiv.innerHTML = `
+                    <div class="border-b border-gray-200 pb-4 mb-4">
+                        <h3 class="text-xl font-bold text-[#38342E] mb-2">${segment.title}</h3>
+                        <p class="text-gray-600 text-sm mb-2">${segment.summary}</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded">${segment.word_count} 字</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded">${segment.analysis.setting}</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded">${segment.analysis.time}</span>
+                        </div>
+                    </div>
+                    <div class="prose max-w-none">
+                        ${paragraphsHtml}
+                    </div>
+                    <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                        <h4 class="font-semibold text-[#A36B4F] mb-2">段落分析</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <strong>人物：</strong> ${segment.analysis.characters.join('、')}<br>
+                                <strong>關鍵事件：</strong> ${segment.analysis.key_events.join('、')}<br>
+                                <strong>情感基調：</strong> ${segment.analysis.emotional_tone}
+                            </div>
+                            <div>
+                                <strong>文學技巧：</strong> ${segment.analysis.literary_devices.join('、')}<br>
+                                <strong>伏筆：</strong> ${segment.analysis.foreshadowing}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                storyContent.appendChild(segmentDiv);
+            });
+        }
+
+        function scrollToSegment(sequence) {
+            const element = document.getElementById(`segment-${sequence}`);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>
+</body>
+</html>

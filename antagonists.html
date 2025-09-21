@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反派剖析 - 《修仙-七玄關》</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased">
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-[#A36B4F]">《修仙-七玄關》</h1>
+            <p class="text-lg text-gray-600 mt-2">反派剖析</p>
+        </header>
+
+        <!-- 页面导航 -->
+        <nav class="page-nav">
+            <a href="index.html">🏠 首页</a>
+            <a href="overview.html">👥 人物總覽</a>
+            <a href="relations.html">🕸️ 關係網絡</a>
+            <a href="structure.html">📊 關係圖</a>
+            <a href="chapters.html">📖 章節大綱</a>
+            <a href="antagonists.html" class="active">⚔️ 反派剖析</a>
+            <a href="story.html">📚 故事內容</a>
+        </nav>
+
+        <main>
+            <div class="text-center mb-12 max-w-3xl mx-auto">
+                <h2 class="text-2xl font-bold text-[#ffffff] mb-2">反派剖析</h2>
+                <p class="text-white-600">
+                    此處深入解析反派陣營的內部結構與矛盾。透過這兩張分析表，您可以清楚看見每位反派的表面形象、內在慾望、以及他們在邪惡計畫中的具體分工與潛在衝突。
+                </p>
+            </div>
+            <div id="antagonists-analysis" class="space-y-12"></div>
+        </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const antagonistsAnalysisContainer = document.getElementById('antagonists-analysis');
+
+            function createTable(tableData) {
+                return `
+                    <div class="overflow-x-auto">
+                         <h3 class="text-xl font-semibold mb-4 text-center text-[#A36B4F]">${tableData.title}</h3>
+                         <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
+                            <thead>
+                                <tr class="table-header">
+                                    ${tableData.headers.map(h => `<th class="py-3 px-4 text-left font-semibold text-sm text-[#fff]">${h}</th>`).join('')}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${tableData.data.map((row, index) => `
+                                    <tr class="${index % 2 === 0 ? 'table-row-odd' : 'table-row-even'} border-t border-white-200">
+                                        ${row.map(cell => `<td class="py-3 px-4 text-sm text-white-700">${cell}</td>`).join('')}
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                         </table>
+                    </div>
+                `;
+            }
+
+            antagonistsAnalysisContainer.innerHTML = createTable(antagonistAnalysis.roles) + createTable(antagonistAnalysis.conflicts);
+        });
+    </script>
+</body>
+</html>

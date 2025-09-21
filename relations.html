@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關係網絡 - 《修仙-七玄關》</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased">
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-[#A36B4F]">《修仙-七玄關》</h1>
+            <p class="text-lg text-gray-600 mt-2">關係網絡</p>
+        </header>
+
+        <!-- 页面导航 -->
+        <nav class="page-nav">
+            <a href="index.html">🏠 首页</a>
+            <a href="overview.html">👥 人物總覽</a>
+            <a href="relations.html" class="active">🕸️ 關係網絡</a>
+            <a href="structure.html">📊 關係圖</a>
+            <a href="chapters.html">📖 章節大綱</a>
+            <a href="antagonists.html">⚔️ 反派剖析</a>
+            <a href="story.html">📚 故事內容</a>
+        </nav>
+
+        <main>
+            <div class="text-center mb-12 max-w-3xl mx-auto">
+                <h2 class="text-2xl font-bold text-gray-200 mb-2">關係網絡</h2>
+                <p class="text-gray-300">
+                    這裡展示了推動故事發展的核心衝突與張力。點擊任一組關係，即可展開查看其在故事中的具體功能與戲劇效果，幫助您釐清角色之間的互動如何交織成複雜的劇情。
+                </p>
+            </div>
+            <div id="relations-list" class="max-w-4xl mx-auto space-y-4"></div>
+        </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const relationsList = document.getElementById('relations-list');
+
+            relations.forEach(rel => {
+                const relationEl = document.createElement('div');
+                relationEl.className = 'card-dark rounded-lg cursor-pointer';
+                relationEl.innerHTML = `
+                    <div class="relation-header p-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                        <div class="font-semibold text-lg card-title">${rel.p1} <span class="text-gray-400 mx-2">&harr;</span> ${rel.p2}</div>
+                        <div class="text-sm card-subtitle mt-2 md:mt-0">${rel.tension}</div>
+                    </div>
+                    <div class="relation-body p-4 border-t border-[#2A333F] hidden">
+                        <strong class="text-[#A36B4F]">故事功能：</strong>
+                        <p class="text-gray-300 mt-1">${rel.func}</p>
+                    </div>
+                `;
+                relationsList.appendChild(relationEl);
+                
+                relationEl.querySelector('.relation-header').addEventListener('click', () => {
+                    relationEl.querySelector('.relation-body').classList.toggle('hidden');
+                    relationEl.classList.toggle('ring-1');
+                    relationEl.classList.toggle('ring-[#3A4656]');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關係圖 - 《修仙-七玄關》</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased">
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-[#A36B4F]">《修仙-七玄關》</h1>
+            <p class="text-lg text-white-600 mt-2">人物關係結構圖</p>
+        </header>
+
+        <!-- 页面导航 -->
+        <nav class="page-nav">
+            <a href="index.html">🏠 首页</a>
+            <a href="overview.html">👥 人物總覽</a>
+            <a href="relations.html">🕸️ 關係網絡</a>
+            <a href="structure.html" class="active">📊 關係圖</a>
+            <a href="chapters.html">📖 章節大綱</a>
+            <a href="antagonists.html">⚔️ 反派剖析</a>
+            <a href="story.html">📚 故事內容</a>
+        </nav>
+
+        <main>
+            <div class="text-center mb-12 max-w-3xl mx-auto">
+                <h2 class="text-2xl font-bold text-[#ffffff] mb-2">人物關係結構圖</h2>
+                <p class="text-white-600">此圖表視覺化呈現了故事中各方勢力的層級關係、內部連結與核心衝突，從國際黑市到主角團隊的家庭悲劇，一目了然。</p>
+            </div>
+            <div class="bg-[#FBF7F3] p-4 md:p-8 rounded-lg shadow-inner overflow-x-auto">
+                <div class="flex flex-col items-center min-w-[1000px] space-y-4">
+                    
+                    <!-- Antagonist Block -->
+                    <div class="diagram-node bg-gray-800 text-white border-gray-600">【國際醫療黑市】</div>
+                    <div class="h-8 connector-v relative"><span class="annotation !left-auto right-2 !-translate-x-0">（提供需求、資金、技術）</span></div>
+                    
+                    <div class="w-full flex justify-center">
+                        <div class="w-11/12 border-t-2 border-b-2 border-gray-400 py-4">
+                            <div class="flex justify-between items-stretch text-xs">
+                                <div class="flex flex-col items-center w-1/4">
+                                    <div class="diagram-node border-red-400">【劉遠堂】<p class="text-red-700">金主、掌控資金</p><p class="text-gray-500">(貪婪)</p></div>
+                                </div>
+                                <div class="flex flex-col items-center w-1/4 pt-8">
+                                    <div class="h-8 connector-v rotate-90 w-full !mx-0 relative"><span class="annotation">政治資源支持</span></div>
+                                </div>
+                                <div class="flex flex-col items-center w-1/4">
+                                    <div class="diagram-node border-red-400">【徐柏庭】<p class="text-red-700">立委、操控法律</p><p class="text-gray-500">(貪權)</p></div>
+                                </div>
+                                <div class="flex flex-col items-center w-1/4 pt-8">
+                                     <div class="h-8 connector-v rotate-90 w-full !mx-0 relative"><span class="annotation">法案護航</span></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-center mt-4">
+                                 <div class="flex flex-col items-center">
+                                    <div class="diagram-node border-red-400">【黃瑞章】<p class="text-red-700">地方動員、名冊控制</p><p class="text-gray-500">(貪財)</p></div>
+                                    <div class="h-8 connector-v relative"><span class="annotation !left-auto right-2 !-translate-x-0">下指令執行 &rarr;</span></div>
+                                    <div class="diagram-node border-red-400">【周子勳】<p class="text-xs">純粹邪惡｜海外勢力代理人</p></div>
+                                    <div class="h-8 connector-v border-dashed"></div>
+                                    <p class="text-xs text-center text-gray-600">假裝線人接近主角四人組<br>導致許佑哲死亡</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="h-12 connector-v relative"><span class="annotation" style="writing-mode: vertical-rl;">（敵對關係）</span><span class="text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">&darr;</span></div>
+
+                    <!-- Protagonist Block -->
+                    <div class="w-full border-t-2 border-b-2 border-gray-400 p-4 bg-white/50">
+                         <div class="diagram-node bg-blue-500 text-white border-blue-300 inline-block">【主角四人組】</div>
+                         <div class="flex justify-between items-center text-xs mt-4">
+                            <div class="diagram-node border-blue-400">【林承祐】<p>刑警</p></div>
+                            <div class="connector-h relative"><span class="annotation">十五年搭檔</span></div>
+                            <div class="diagram-node border-blue-400">【古明軒】<p>宗教民俗專家</p></div>
+                            <div class="connector-h relative"><span class="annotation">教授與學生</span></div>
+                            <div class="diagram-node border-blue-400">【許佑哲】<p>博士生</p></div>
+                         </div>
+                         <div class="flex justify-between text-xs mt-2">
+                            <div class="w-1/3 text-center relative pt-4"><div class="h-4 connector-v absolute top-0 left-1/2"></div>（與江雪音衝突後互信）</div>
+                            <div class="w-1/3"></div>
+                            <div class="w-1/3 text-center relative pt-4"><div class="h-4 connector-v absolute top-0 left-1/2"></div>互酸搭檔</div>
+                         </div>
+                         <div class="relative h-4 w-11/12 mx-auto mt-2 border-b-2 border-l-2 border-r-2 border-gray-400"></div>
+                         <div class="flex flex-col items-center mt-4 text-xs">
+                            <div class="diagram-node border-blue-400">【江雪音】</div>
+                            <div class="h-8 connector-v relative"><span class="annotation !left-auto right-2 !-translate-x-0">弟弟(失蹤者)</span></div>
+                            <div class="diagram-node border-blue-400">【江承安】</div>
+                            <div class="h-8 connector-v relative"><span class="annotation text-base">&darr;</span></div>
+                            <div class="text-gray-600 font-bold">家庭悲劇線</div>
+                            <div class="w-full flex justify-between items-start text-center mt-4 space-x-2">
+                                <div class="flex-1">
+                                    <div class="diagram-node border-gray-400">【江國榮】(父)</div>
+                                    <p class="mt-1">逐漸沉迷宗教，與議長關係拉近。可能被選為下一關的供體。</p>
+                                </div>
+                                <div class="flex-1">
+                                     <div class="diagram-node border-gray-400">【江母】(母)</div>
+                                     <p class="mt-1">哀怨、壓力</p>
+                                </div>
+                                <div class="flex-1">
+                                     <div class="diagram-node border-gray-400">【黃瑞章】(老同學)</div>
+                                     <p class="mt-1">利用父親穩定村民情緒</p>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
